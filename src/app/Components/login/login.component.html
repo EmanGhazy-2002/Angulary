@@ -1,0 +1,65 @@
+<form
+  [formGroup]="loginForm"
+  (ngSubmit)="loginSubmit()"
+  class="p-4 shadow-sm bg-white rounded"
+  style="max-width: 500px; margin: auto"
+>
+  <h3 class="mb-4 text-center">Login to Your Account</h3>
+
+  @if (errorMessage) {
+  <div class="alert alert-danger mt-3 mb-0 text-center">
+    {{ errorMessage }}
+  </div>
+  }
+
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input
+      type="text"
+      id="username"
+      formControlName="username"
+      class="form-control"
+      placeholder="Enter your username"
+    />
+    @if (loginForm.get('username')?.touched &&
+    loginForm.get('username')?.invalid) {
+    <div class="text-danger mt-1">
+      @if (loginForm.get('username')?.errors?.['required']) { Username is
+      required. }
+    </div>
+    }
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input
+      type="password"
+      id="password"
+      formControlName="password"
+      class="form-control"
+      placeholder="Enter your password"
+    />
+    @if (loginForm.get('password')?.touched &&
+    loginForm.get('password')?.invalid) {
+    <div class="text-danger mt-1">
+      @if (loginForm.get('password')?.errors?.['required']) { Password is
+      required. } @if (loginForm.get('password')?.errors?.['minlength']) {
+      Password must be at least 6 characters. }
+    </div>
+    }
+  </div>
+
+  <div class="d-grid mt-4">
+    <button
+      type="submit"
+      class="btn btn-lavender"
+      [disabled]="loginForm.invalid || isLoading"
+    >
+      {{ isLoading ? "Logging in..." : "Login" }}
+    </button>
+  </div>
+
+  <p class="mt-3 text-center">
+    Don't have an account? <a routerLink="/register">Register here</a>
+  </p>
+</form>

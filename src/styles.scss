@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+$lavender: #f1cffc;
+$lavender-dark: #e7b1fc;
+$white-soft: #F8F8FF;
+
+body {
+    background-color: $white-soft;
+}
+
+.navbar {
+    background-color: $lavender;
+}
+
+.btn-lavender {
+    background-color: $lavender;
+    border-color: $lavender-dark;
+    color: #333;
+}
+
+.btn-lavender:hover {
+    background-color: $lavender-dark;
+    border-color: $lavender;
+}
+
+.form-control:focus {
+    border-color: $lavender-dark;
+    box-shadow: 0 0 0 0.2rem rgba(182, 182, 240, 0.25);
+}
+
+.card {
+    background-color: $white-soft;
+    border-color: $lavender;
+}
+
+.footer {
+    background-color: $lavender;
+    color: #333;
+}
+
+.alert {
+    background-color: $lavender-dark;
+    color: #333;
+}

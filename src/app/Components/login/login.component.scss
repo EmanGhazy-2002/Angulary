@@ -1,0 +1,16 @@
+$lavender: #f1cffc;
+$lavender-dark: #e7b1fc;
+$white-soft: #F8F8FF;
+form {
+    background-color: $white-soft;
+}
+
+.btn-lavender {
+    background-color: $lavender;
+    border-color: $lavender-dark;
+    color: #333;
+}
+
+.btn-lavender:hover {
+    background-color: $lavender-dark;
+    border-color: $lavender; }

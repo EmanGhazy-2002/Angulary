@@ -1,0 +1,11 @@
+$lavender: #f1cffc;
+$lavender-dark: #e7b1fc;
+$white-soft: #F8F8FF;
+.card {
+    background-color: $white-soft;
+    border-color: $lavender;
+}
+
+.card-title {
+    color: $lavender-dark;
+}

@@ -1,0 +1,14 @@
+$lavender: #f1cffc;
+$lavender-dark: #e7b1fc;
+$white-soft: #F8F8FF;
+.navbar {
+    background-color: $lavender;
+}
+
+.nav-link {
+    color: #333;
+}
+
+.nav-link:hover {
+    color: $lavender-dark;
+}
