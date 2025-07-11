@@ -1,7 +1,7 @@
 import { Injectable, inject, PLATFORM_ID } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
-import { AuthService } from '../Services/auth.service';
+import { AuthService } from '../core/Services/auth.service';
 
 @Injectable({
   providedIn: 'root'

@@ -1,14 +1,18 @@
-$lavender: #f1cffc;
-$lavender-dark: #e7b1fc;
-$white-soft: #F8F8FF;
-.navbar {
-    background-color: $lavender;
-}
-
-.nav-link {
-    color: #333;
+/* src/app/components/header/header.component.css */
+.navbar-brand {
+    font-weight: bold;
+    color: #007bff !important;
 }
 
 .nav-link:hover {
-    color: $lavender-dark;
+    color: #007bff !important;
+}
+
+.nav-link.active {
+    color: #007bff !important;
+    font-weight: bold;
+}
+
+.bi-cart {
+    font-size: 1.2rem;
 }

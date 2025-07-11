@@ -1,0 +1,28 @@
+<!-- src/app/components/product-detail/product-detail.component.html -->
+<div class="container my-5">
+  @if (product) {
+  <div class="row">
+    <div class="col-md-6">
+      <img
+        [src]="product.thumbnail"
+        class="img-fluid rounded shadow-sm"
+        alt="{{ product.title }}"
+        style="max-height: 400px"
+      />
+    </div>
+    <div class="col-md-6">
+      <h2>{{ product.title }}</h2>
+      <p class="text-muted">{{ product.category }}</p>
+      <h4>{{ product.price | currency : "USD" }}</h4>
+      <p>Rating: {{ product.rating }} / 5</p>
+      <p>Stock: {{ product.stock }}</p>
+      <p>{{ product.description }}</p>
+      <button class="btn btn-success" (click)="addToCart(product)">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+  } @else {
+  <p>Loading product details...</p>
+  }
+</div>

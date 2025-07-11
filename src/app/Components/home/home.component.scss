@@ -1,0 +1,14 @@
+/* src/app/components/home/home.component.css */
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-group .btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #28a745;
+}

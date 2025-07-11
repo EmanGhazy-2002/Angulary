@@ -1,29 +1,40 @@
-<div class="container py-4">
+<!-- src/app/components/product-card/product-card.component.html -->
+<div class="container my-5">
   <h2 class="text-center mb-4">Our Products</h2>
+  @if (error) {
+  <div class="alert alert-danger">{{ error }}</div>
+  }
   <div class="row">
-    <div class="col-md-4 mb-3">
-      <div class="card">
+    @for (product of products; track product.id) {
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          [src]="product.thumbnail"
+          class="card-img-top p-3"
+          alt="{{ product.title }}"
+          style="height: 200px; object-fit: contain"
+        />
         <div class="card-body">
-          <h5 class="card-title">Product 1</h5>
-          <p class="card-text">Description of Product 1.</p>
+          <h5 class="card-title">{{ product.title | slice : 0 : 50 }}...</h5>
+          <p class="card-text text-muted">
+            {{ product.price | currency : "USD" }}
+          </p>
+          <p class="card-text text-muted">Rating: {{ product.rating }} / 5</p>
+          <div class="d-flex gap-2">
+            <a [routerLink]="['/product', product.id]" class="btn btn-primary"
+              >View Details</a
+            >
+            <button class="btn btn-success" (click)="addToCart(product)">
+              Add to Cart
+            </button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-4 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Product 2</h5>
-          <p class="card-text">Description of Product 2.</p>
-        </div>
-      </div>
+    } @empty {
+    <div class="col-12">
+      <p>Loading products...</p>
     </div>
-    <div class="col-md-4 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Product 3</h5>
-          <p class="card-text">Description of Product 3.</p>
-        </div>
-      </div>
-    </div>
+    }
   </div>
 </div>

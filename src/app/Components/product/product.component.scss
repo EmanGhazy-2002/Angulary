@@ -9,3 +9,12 @@ $white-soft: #F8F8FF;
 .card-title {
     color: $lavender-dark;
 }
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-success:hover {
+    background-color: #28a745;
+}

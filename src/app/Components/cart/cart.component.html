@@ -1,0 +1,40 @@
+<!-- src/app/components/cart/cart.component.html -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">Your Cart</h2>
+  @if (cartItems.length > 0) {
+  <div class="row">
+    @for (item of cartItems; track item.id) {
+    <div class="col-12 mb-3">
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-md-2">
+            <img
+              [src]="item.thumbnail"
+              class="img-fluid rounded-start"
+              alt="{{ item.title }}"
+              style="height: 100px"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ item.title }}</h5>
+              <p class="card-text text-muted">
+                {{ item.price | currency : "USD" }} x {{ item.quantity }}
+              </p>
+            </div>
+          </div>
+          <div class="col-md-2 d-flex align-items-center">
+            <button class="btn btn-danger" (click)="removeFromCart(item.id)">
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <h3 class="text-end mt-4">Total: {{ getTotal() | currency : "USD" }}</h3>
+  } @else {
+  <p class="text-center">Your cart is empty.</p>
+  }
+</div>

@@ -1,4 +1,18 @@
-.footer {
-    position: relative;
-    bottom: 0;
-    width: 100%; }
+/* src/app/components/footer/footer.component.css */
+footer {
+    background: linear-gradient(180deg, #343a40 0%, #212529 100%);
+}
+
+.hover-link:hover {
+    color: #fdfcf8 !important;
+    transition: color 0.3s ease;
+}
+
+.text-muted {
+    font-size: 0.9rem;
+}
+
+h4 {
+    font-weight: 600;
+    color: #ffffff;
+}
